@@ -32,9 +32,20 @@ numeros.forEach(function(el, index) { //<----recordemos que el método forEach r
     console.log(`${el} está en la posición ${index}`);
 });
 
-const numeros = [1, 2, 3, 4, 5];
+numeros.forEach((el, index) => console.log(`${el} está en la posición ${index}`)); //<---- como solamente estamos ejecutando una línea de código, podemos omitir las llaves.
 
-numeros.forEach((el, index) => console.log(`${el} está en la posición ${index}`)); //<---- como solamente estamos ejecutando una línea de código, podemos omitir las llaves
+const perro = {
+    nombre: "Pippin",
+    ladrar: function(){
+        console.log(this); //----> Apunta al contexto local del objeto perro.
+    }
+}
 
+const perro1 = {
+    nombre: "Pippin",
+    ladrar: () => {
+        console.log(this); // ---->Apunta al contexto global, no es considerado buena práctica declarar métodos en objetos literales usando arrow functions.
+    }
+}
 
 ```
