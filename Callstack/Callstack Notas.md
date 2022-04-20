@@ -1,0 +1,9 @@
+# CallStack (Pila de ejecución).
+
+Es la base para entender poqué en `JavaScript` se ejecuta una sola cosa a la vez. Es un concepto intimamente relacionado on otros conceptos como el `Event Loop`, `Clousures` y los `Scopes`.
+
+**¿Qué es CallStack?** Lo podríamos definir como un mapa que usan los motres de JS para saber en qué ejecucion está parado durante la ejecucion y porqué funciones fue pasando hasta llegar ahí. De esta manera cuando el motor termine de ejecutar la función actual, puede continuar ejecutando la función previa desde el lugar exacto que se había realizado la llamada a la función actual y así si esta funcion llama a otra. el motor puede saber a donde tiene que volver cuando termine de ejecutar esta función. Es importante entender que las pilas funcionan con la idea de **LIFO (Last In First Out)**. Lo que significa que cuando queremos sacar un elemento de la pila, tenemos que sacar el que está arriba de todo, que es el último que pusimos.
+
+**¿Cómo funciona CallStack?** El motor de `JS` va leyendo el código de nuestro programa y cada vez que encuentra el llamado de una función va a crear un **registro** o **frame** con información asociada a esta función y lo va a agregar a la pila, este registro va a contener toda la información necesaria para que el motor puieda ejecutar esta función y ante una nueva llamada a una función, el motor crea un nuevo registro para poder ejecutar esta función y lo agrega a la pila. De esta manera el registro que queda arriba del todo de la pila, coincida con la función que el motor está ejecutando. **Por lo tanto, el motor puede ejecutar una sola cosa a la vez.**
+
+![ejemplo CallStack](/ApuntesJS/Callstack/CallStack.png)
